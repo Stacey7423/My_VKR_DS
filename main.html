@@ -1,0 +1,94 @@
+<!doctype html>
+<style>
+form {
+    margin: auto;
+    width: 35%;
+}
+
+.result{
+    margin: auto;
+    width: 35%;
+    border: 1px solid #ccc;
+}
+</style>
+
+<head>
+    <title>Рекомендация соотношения матрица-наполнитель</title>
+</head>
+
+<form action = '{{url_for("main")}}' method = 'POST'>
+    <fieldset>
+        <legend>Введите значение</legend>
+        Плотность, кг/м3
+        <input name = "Плотность, кг/м3" type = "number"
+        required>
+		<legend>Введите значение</legend>
+        Модуль упругости, ГПа
+        <input name = "Модуль упругости, ГПа" type = "number"
+        required>
+		
+        <legend>Введите значение</legend>
+        Количество отвердителя, м.%
+        <input name = "Количество отвердителя, м.%" type = "number"
+        required>
+
+        <legend>Введите значение</legend>
+        Содержание эпоксидных групп, %
+        <input name = "Содержание эпоксидных групп, %" type = "number"
+        required>
+
+        <legend>Введите значение</legend>
+        Температура вспышки, С
+        <input name = "Температура вспышки, С" type = "number"
+        required>
+
+        <legend>Введите значение</legend>
+        Поверхностная плотность, г/м2
+        <input name = "Поверхностная плотность, г/м2" type = "number"
+        required>
+
+        <legend>Введите значение</legend>
+        Модуль упругости при растяжении, ГПа
+        <input name = "Модуль упругости при растяжении, ГПа" type = "number"
+        required>
+
+        <legend>Введите значение</legend>
+        Прочность при растяжении, МПа
+        <input name = "Прочность при растяжении, МПа" type = "number"
+        required>
+
+        <legend>Введите значение</legend>
+        Потребление смолы, г/м2
+        <input name = "Потребление смолы, г/м2" type = "number"
+        required>
+
+        <legend>Введите значение</legend>
+        Угол нашивки
+        <input name = "Угол нашивки" type = "number"
+        required>
+
+        <legend>Введите значение</legend>
+        Шаг нашивки
+        <input name = "Шаг нашивки" type = "number"
+        required>
+
+        <legend>Введите значение</legend>
+        Плотность нашивки
+        <input name = "Плотность нашивки" type = "number"
+        required>
+
+        <br>
+        <br>
+        <input type = 'submit'>
+    </fieldset>
+</form>
+
+<div class = 'result' align = 'center'>
+    {% if result %}
+        <br>
+        <p style = 'font_size: 50px'>
+        Рекомендуемое соотношение матрица-наполнитель
+        </p>
+        <p style = 'font_size = 50px'> {{result}}</p>
+    {% endif %}
+</div>
